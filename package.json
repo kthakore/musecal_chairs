@@ -1,0 +1,45 @@
+{
+  "name": "musecal_chairs",
+  "version": "0.0.1",
+  "description": "Muse API, PG",
+  "main": "index.js",
+  "scripts": {
+    "start-docker": "DOCKER_IP=localhost docker-compose up -d",
+    "postinstall": "npm run start-docker",
+    "pre-start": "npm run start-docker",
+    "start": "DOCKER_IP=localhost nodemon --harmony server.js",
+    "test": "npm run base-test && npm run lint",
+    "base-test": "npm run start-docker && DOCKER_IP=localhost mocha --harmony --reporter spec ./test/test-*.js",
+    "lint": "eslint src app test webpack config lib server.js webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kthakore/musecal_chairs.git"
+  },
+  "keywords": [
+    "PostgreSQL",
+    "Mocha",
+    "Should",
+    "ESLint",
+    "Sequelize"
+  ],
+  "author": "Kartik Thakore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kthakore/musecal_chairs/issues"
+  },
+  "homepage": "https://github.com/kthakore/musecal_chairs#readme",
+  "devDependencies": {
+    "cross-spawn-with-kill": "^1.0.0",
+    "eslint": "^3.6.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
+    "should": "^11.1.0"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.3"
+  }
+}
