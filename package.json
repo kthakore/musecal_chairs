@@ -7,7 +7,7 @@
     "start-docker": "DOCKER_IP=localhost docker-compose up -d",
     "postinstall": "npm run start-docker",
     "pre-start": "npm run start-docker",
-    "start": "DOCKER_IP=localhost nodemon --harmony server.js",
+    "start": "DOCKER_IP=localhost node --harmony index.js",
     "test": "npm run base-test && npm run lint",
     "base-test": "npm run start-docker && DOCKER_IP=localhost mocha --harmony --reporter spec ./test/test-*.js",
     "lint": "eslint src app test webpack config lib server.js webpack.config.js"
@@ -30,14 +30,12 @@
   },
   "homepage": "https://github.com/kthakore/musecal_chairs#readme",
   "devDependencies": {
-    "cross-spawn-with-kill": "^1.0.0",
     "eslint": "^3.6.0",
     "mocha": "^3.0.2",
-    "nodemon": "^1.10.2",
     "should": "^11.1.0"
   },
   "dependencies": {
-    "co": "^4.6.0",
+    "bluebird": "^3.4.6",
     "debug": "^2.2.0",
     "lodash": "^4.16.4",
     "pg": "^6.1.0",
