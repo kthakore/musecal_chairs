@@ -2,7 +2,7 @@
 CREATE TABLE "jobs" (
 "id" bigserial NOT NULL,
 "short_name" text,
-"content" text,
+"contents" text,
 "type" text,
 "model_type" text,
 "name" text,

@@ -1,7 +1,7 @@
 'use strict'
-var should = require('should'),
-  Jobs   = require('../lib/Jobs'),
-  debug   = require('debug')('mocha')
+var should    = require('should'),
+  Jobs        = require('../lib/Jobs'),
+  debug       = require('debug')('mocha')
 
 
 describe('Jobs Class ', function () {

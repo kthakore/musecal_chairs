@@ -1,6 +1,7 @@
 /*global require*/
 
-var Config = require('./lib/Config')
 
+var Runner = require('./lib/Runner'),
+    runner = new Runner({page: 0})
 
-console.log(Config.data)
+runner.run()
