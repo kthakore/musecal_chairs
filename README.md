@@ -2,9 +2,10 @@
 
 To run this you need:
 
-* Docker For Mac Version 1.12.2-beta28 (12906)
+* Docker Toolbox
   * Docker Compose specifically
-* node v5.5.0
+  * [Docker Toolbox is Install](https://www.docker.com/products/docker-toolbox)
+  * node v5.5.0
 
 ## Notes
 
