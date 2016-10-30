@@ -1,3 +1,16 @@
 {
-   "api_key" : "YOUR-KEY-FOR-MUSE-APP"
+  "api_key" : "YOUR-KEY-FOR-MUSE-APP"
+    "sequelize" : {
+      "database" : "muse", 
+        "username" : "postgres", 
+        "password" : "GH4i9a91m", 
+        "options"  : {
+          "dialect": "postgres",
+          "host": "localhost",
+          "port": 4337,
+          "define": {
+            "timestamps": false
+          }
+        } 
+    }
 }

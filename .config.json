@@ -1,0 +1,16 @@
+{
+  "api_key" : "17fee77ba5fd82601799510f90e463afe7a5995a10b1b86ceb111191971f6576",
+  "sequelize" : {
+    "database" : "muse", 
+    "username" : "postgres", 
+    "password" : "GH4i9a91m", 
+    "options"  : {
+      "dialect": "postgres",
+      "host": "localhost",
+      "port": 4337,
+      "define": {
+        "timestamps": false
+      }
+    } 
+  }
+}

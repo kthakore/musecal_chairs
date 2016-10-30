@@ -1,6 +1,6 @@
 
 CREATE TABLE "jobs" (
-"id" bigint NOT NULL,
+"id" bigserial NOT NULL,
 "short_name" text,
 "content" text,
 "type" text,
@@ -22,7 +22,7 @@ PRIMARY KEY ("job_id", "tag_id")
 WITHOUT OIDS;
 
 CREATE TABLE "job_tags" (
-"id" serial NOT NULL,
+"id" bigserial NOT NULL,
 "tag" varchar(255),
 PRIMARY KEY ("id") 
 )
@@ -52,7 +52,7 @@ PRIMARY KEY ("id")
 WITHOUT OIDS;
 
 CREATE TABLE "job_locations" (
-"id" bigint NOT NULL,
+"id" bigserial NOT NULL,
 "address" varchar(255),
 "city" varchar(255),
 "state" varchar(255),
@@ -62,7 +62,7 @@ PRIMARY KEY ("id")
 WITHOUT OIDS;
 
 CREATE TABLE "companies" (
-"id" bigint NOT NULL,
+"id" bigserial NOT NULL,
 "short_name" text,
 "name" text,
 "created_at" timestamptz(6) NOT NULL,
