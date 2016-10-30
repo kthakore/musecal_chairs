@@ -1,0 +1,78 @@
+{
+    "public.companies": {
+        "belongsToMany": {
+            "fkJobsXCompany1Jobs": null
+        },
+        "hasMany": {
+            "fkJobsXCompany1s": null
+        }
+    },
+    "public.jobCategories": {
+        "belongsToMany": {
+            "fkJobsXCategory1Jobs": null
+        },
+        "hasMany": {
+            "fkJobsXCategory1s": null
+        }
+    },
+    "public.jobLocations": {
+        "belongsToMany": {
+            "fkJobXLocation1Jobs": null
+        },
+        "hasMany": {
+            "fkJobXLocation1s": null
+        }
+    },
+    "public.jobRefs": {
+        "belongsTo": {
+            "job": null
+        }
+    },
+    "public.jobTags": {
+        "belongsToMany": {
+            "fkJobsXTag1Jobs": null
+        },
+        "hasMany": {
+            "fkJobsXTag1s": null
+        }
+    },
+    "public.jobXLocation": {
+        "belongsTo": {
+            "job": null,
+            "location": null
+        }
+    },
+    "public.jobs": {
+        "belongsToMany": {
+            "fkJobXLocationLocations": null,
+            "fkJobsXCategoryCategories": null,
+            "fkJobsXCompanyCompanies": null,
+            "fkJobsXTagTags": null
+        },
+        "hasMany": {
+            "fkJobRefs": null,
+            "fkJobXLocations": null,
+            "fkJobsXCategories": null,
+            "fkJobsXCompanies": null,
+            "fkJobsXTags": null
+        }
+    },
+    "public.jobsXCategory": {
+        "belongsTo": {
+            "category": null,
+            "job": null
+        }
+    },
+    "public.jobsXCompany": {
+        "belongsTo": {
+            "company": null,
+            "job": null
+        }
+    },
+    "public.jobsXTag": {
+        "belongsTo": {
+            "job": null,
+            "tag": null
+        }
+    }
+}
