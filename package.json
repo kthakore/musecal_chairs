@@ -23,6 +23,11 @@
     "ESLint",
     "Sequelize"
   ],
+  "eslintConfig": {
+    "globals": {
+      "module": true
+    }
+  },
   "author": "Kartik Thakore",
   "license": "ISC",
   "bugs": {
