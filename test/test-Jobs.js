@@ -9,7 +9,10 @@ describe('Jobs Class ', function () {
    it('Jobs can get', function (done) {
      var jobs = new Jobs()
 
-     jobs.on('loaded', () => done)
+     jobs.on('loaded', (msg) => {
+
+        done()
+      })
      jobs.GetData()
 
    })
