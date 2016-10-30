@@ -1,23 +1,3 @@
-ALTER TABLE "jobs_x_company" DROP CONSTRAINT "fk_jobs_x_company";
-ALTER TABLE "jobs_x_company" DROP CONSTRAINT "fk_jobs_x_company_1";
-ALTER TABLE "jobs_x_category" DROP CONSTRAINT "fk_jobs_x_category";
-ALTER TABLE "jobs_x_category" DROP CONSTRAINT "fk_jobs_x_category_1";
-ALTER TABLE "jobs_x_tag" DROP CONSTRAINT "fk_jobs_x_tag";
-ALTER TABLE "jobs_x_tag" DROP CONSTRAINT "fk_jobs_x_tag_1";
-ALTER TABLE "job_x_location" DROP CONSTRAINT "fk_job_x_location";
-ALTER TABLE "job_x_location" DROP CONSTRAINT "fk_job_x_location_1";
-ALTER TABLE "job_refs" DROP CONSTRAINT "fk_job_refs";
-
-DROP TABLE "jobs";
-DROP TABLE "jobs_x_tag";
-DROP TABLE "job_tags";
-DROP TABLE "jobs_x_category";
-DROP TABLE "job_categories";
-DROP TABLE "job_refs";
-DROP TABLE "job_locations";
-DROP TABLE "companies";
-DROP TABLE "jobs_x_company";
-DROP TABLE "job_x_location";
 
 CREATE TABLE "jobs" (
 "id" bigint NOT NULL,
@@ -26,10 +6,10 @@ CREATE TABLE "jobs" (
 "type" text,
 "model_type" text,
 "name" text,
-"publication_date" timestamptz(255) NOT NULL,
+"publication_date" timestamptz(6) NOT NULL,
 "created_at" timestamptz(0) NOT NULL,
-"updated_at" timestamptz(255) NOT NULL,
-"deleted_at" timestamptz(255),
+"updated_at" timestamptz(6) NOT NULL,
+"deleted_at" timestamptz(6),
 PRIMARY KEY ("id") 
 )
 WITHOUT OIDS;
@@ -42,7 +22,7 @@ PRIMARY KEY ("job_id", "tag_id")
 WITHOUT OIDS;
 
 CREATE TABLE "job_tags" (
-"id" serial NOT NULL DEFAULT uuid_generate_v4(),
+"id" serial NOT NULL,
 "tag" varchar(255),
 PRIMARY KEY ("id") 
 )
@@ -85,15 +65,15 @@ CREATE TABLE "companies" (
 "id" bigint NOT NULL,
 "short_name" text,
 "name" text,
-"created_at" timestamptz(255) NOT NULL,
+"created_at" timestamptz(6) NOT NULL,
 "updated_at" timestamptz(0) NOT NULL,
-"deleted_at" timestamptz(255),
+"deleted_at" timestamptz(6),
 PRIMARY KEY ("id") 
 )
 WITHOUT OIDS;
 
 CREATE TABLE "jobs_x_company" (
-"id" uuid NOT NULL,
+"id" bigint NOT NULL,
 "job_id" bigint,
 "company_id" bigint,
 PRIMARY KEY ("id") 
