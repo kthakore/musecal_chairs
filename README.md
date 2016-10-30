@@ -20,9 +20,27 @@ To run this you need:
 
 * npm test
 
+![Running NPM Test](https://raw.githubusercontent.com/kthakore/musecal_chairs/master/test.gif)
+
+
+
 # Run the script
 
 * DEBUG=Runner,JOBS npm start
+
+
+![Running NPM Start](https://raw.githubusercontent.com/kthakore/musecal_chairs/master/run.gif)
+
+
+
+# Query 'How many jobs with the location "New York City Metro Area" were published from Sept. 1st to 30th 2016?"
+
+Using a gin index on the locations field in the Jobs table. We can do:
+
+`
+select count(*) from jobs
+where locations @> '[{"name" : "New York City Metro Area"}]' and publication_date between '2016-09-01' AND '2016-09-30'
+`
 
 # Debug Mode
 

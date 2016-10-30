@@ -43,3 +43,6 @@ WITHOUT OIDS;
 ALTER TABLE "jobs_x_company" ADD CONSTRAINT "fk_jobs_x_company" FOREIGN KEY ("job_id") REFERENCES "jobs" ("id") ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED;
 ALTER TABLE "jobs_x_company" ADD CONSTRAINT "fk_jobs_x_company_1" FOREIGN KEY ("company_id") REFERENCES "companies" ("id") ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED;
 
+CREATE INDEX job_locations_data_gin_idx ON jobs
+USING gin ((locations) jsonb_path_ops);
+
