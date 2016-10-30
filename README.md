@@ -20,6 +20,23 @@ To run this you need:
 
 * npm test
 
+# Debug Mode
+
+You can show debug comments for:
+  * JOBS
+  * SQL
+  * Runner
+
+With the environment variable `DEBUG`
+
+## Example
+
+```
+ DEBUG=JOBS,SQL npm start
+```
+
+or even: `DEBUG=*` for all levels of debugging
+
 # Improvements
 
  * Only insert if data is new instead of upsert
