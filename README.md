@@ -4,7 +4,7 @@ To run this you need:
 
 * Docker Toolbox
   * Docker Compose specifically
-  * [Docker Toolbox is Install](https://www.docker.com/products/docker-toolbox)
+  * [Docker Toolbox is needed](https://www.docker.com/products/docker-toolbox)
   * node v5.5.0
 
 ## Notes
