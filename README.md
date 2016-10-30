@@ -24,6 +24,9 @@ To run this you need:
 
  * Only insert if data is new instead of upsert
  * Handle API limits
+ * Normalize the JSONB fields into specific fields
+   * Would need to be able to create primary keys on specific fields
+ * Update the varchar limit of `short_name` fields so that the data is store more efficiently
 
 
 
