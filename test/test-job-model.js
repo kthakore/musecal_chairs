@@ -26,8 +26,6 @@ describe('Job Model', function () {
       done()
     })
   })
-
-
   it('can findOrCreate complete job test', function (done) {
     models.jobs.findOrCreate({where: {id: test_json.id}, defaults: test_json})
     .then(function (jobs) {
@@ -44,6 +42,17 @@ describe('Job Model', function () {
       done()
     })
   })
+
+  it('can upsert complete job test', function (done) {
+    test_json.created_at = new Date()
+    test_json.updated_at = test_json.created_at
+    models.jobs.upsert(test_json)
+    .then(function () {
+      done()
+    })
+  })
+
+
 })
 
 

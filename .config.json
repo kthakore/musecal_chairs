@@ -9,7 +9,9 @@
       "host": "localhost",
       "port": 4337,
       "define": {
-        "timestamps": false
+        "timestamps": true,
+        "underscore" : true,
+        "omitNull": true
       }
     } 
   }

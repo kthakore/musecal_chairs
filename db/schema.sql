@@ -12,8 +12,8 @@ CREATE TABLE "jobs" (
 "locations" jsonb,
 "levels" jsonb,
 "publication_date" timestamptz(6) NOT NULL,
-"created_at" timestamptz(0) NOT NULL,
-"updated_at" timestamptz(6) NOT NULL,
+"created_at" timestamptz(0) NOT NULL DEFAULT NOW(),
+"updated_at" timestamptz(6) NOT NULL DEFAULT NOW(),
 "deleted_at" timestamptz(6),
 PRIMARY KEY ("id") 
 )
@@ -24,8 +24,8 @@ CREATE TABLE "companies" (
 "id" bigserial NOT NULL,
 "short_name" text,
 "name" text,
-"created_at" timestamptz(6) NOT NULL,
-"updated_at" timestamptz(0) NOT NULL,
+"created_at" timestamptz(6) NOT NULL DEFAULT NOW(),
+"updated_at" timestamptz(0) NOT NULL DEFAULT NOW(),
 "deleted_at" timestamptz(6),
 PRIMARY KEY ("id") 
 )
